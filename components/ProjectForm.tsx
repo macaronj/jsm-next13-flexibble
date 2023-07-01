@@ -83,7 +83,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
     image: project?.image || "",
     liveUrl: project?.liveUrl || "",
     githubUrl: project?.githubUrl || "",
-    category: project?.category || "",
+    categorie: project?.categorie || "",
   });
 
   return (
@@ -140,10 +140,10 @@ const ProjectForm = ({ type, session, project }: Props) => {
       />
 
       <CustomMenu
-        title="Category"
-        state={form.category}
+        title="categorie"
+        state={form.categorie}
         filters={categoryFilters}
-        setState={(value) => handleStateChange("category", value)}
+        setState={(value) => handleStateChange("categorie", value)}
       />
 
       <div className="flexStart w-full">

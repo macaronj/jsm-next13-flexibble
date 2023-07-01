@@ -17,7 +17,7 @@ type ProjectSearch = {
 };
 
 type SearchParams = {
-  category?: string;
+  categorie?: string;
   endCursor?: string;
 };
 
@@ -31,8 +31,8 @@ export const dynamic = "force-dynamic";
 export const dynamicParams = true;
 export const revalidate = 0;
 
-const Home = async ({ searchParams: { category, endCursor } }: Props) => {
-  const data = (await fetchAllProjects(category, endCursor)) as ProjectSearch;
+const Home = async ({ searchParams: { categorie, endCursor } }: Props) => {
+  const data = (await fetchAllProjects(categorie, endCursor)) as ProjectSearch;
 
   const projectsToDisplay = data?.projectSearch?.edges || [];
 

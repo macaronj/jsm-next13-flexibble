@@ -55,8 +55,8 @@ export const createUserMutation = `
 `;
 
 export const projectsQuery = `
-  query getProjects($category: String, $endCursor: String) {
-    projectSearch(first: 8, after: $endCursor, filter: {category: {eq: $category}}) {
+  query getProjects($categorie: String, $endCursor: String) {
+    projectSearch(first: 8, after: $endCursor, filter: {categorie: {eq: $categorie}}) {
       pageInfo {
         hasNextPage
         hasPreviousPage
@@ -71,7 +71,7 @@ export const projectsQuery = `
           liveUrl
           id
           image
-          category
+          categorie
           createdBy {
             id
             email
@@ -93,7 +93,7 @@ export const getProjectByIdQuery = `
       image
       liveUrl
       githubUrl
-      category
+      categorie
       createdBy {
         id
         name

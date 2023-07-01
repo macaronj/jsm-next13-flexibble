@@ -68,7 +68,7 @@ export const projectsQuery = `
           title
           githubUrl
           description
-          liveSiteUrl
+          liveUrl
           id
           image
           category
@@ -91,7 +91,7 @@ export const getProjectByIdQuery = `
       title
       description
       image
-      liveSiteUrl
+      liveUrl
       githubUrl
       category
       createdBy {

@@ -81,7 +81,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
     title: project?.title || "",
     description: project?.description || "",
     image: project?.image || "",
-    liveSiteUrl: project?.liveSiteUrl || "",
+    liveUrl: project?.liveUrl || "",
     githubUrl: project?.githubUrl || "",
     category: project?.category || "",
   });
@@ -126,9 +126,9 @@ const ProjectForm = ({ type, session, project }: Props) => {
       <Formfield
         type="url"
         title="Website Url"
-        state={form.liveSiteUrl}
+        state={form.liveUrl}
         placeholder="https://example.com"
-        setState={(value) => handleStateChange("liveSiteUrl", value)}
+        setState={(value) => handleStateChange("liveUrl", value)}
       />
 
       <Formfield

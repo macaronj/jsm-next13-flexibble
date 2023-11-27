@@ -1,12 +1,18 @@
-import { ProjectInterface, UserProfile } from "@/common.types";
+import {
+  ProjectInterface,
+  SessionInterface,
+  UserProfile,
+} from "@/common.types";
 import Image from "next/image";
 
 import Link from "next/link";
 import Button from "./Button";
 import ProjectCard from "./ProjectCard";
+import { Description } from "@headlessui/react/dist/components/description/description";
 
 type Props = {
   user: UserProfile;
+  session?: SessionInterface;
 };
 
 const ProfilePage = ({ user }: Props) => (
@@ -22,7 +28,7 @@ const ProfilePage = ({ user }: Props) => (
         />
         <p className="text-4xl font-bold mt-10">{user?.name}</p>
         <p className="md:text-5xl text-3xl font-extrabold md:mt-10 mt-5 max-w-lg">
-          I’m Software Engineer at JSM 👋
+          {user?.description}
         </p>
 
         <div className="flex mt-8 gap-5 w-full flex-wrap">

@@ -32,7 +32,6 @@ const ProjectForm = ({ type, session, project }: Props) => {
 
     try {
       if (type === "create") {
-        console.log(form);
         await createNewProject(form, session?.user?.id, token);
 
         router.push("/");
@@ -83,7 +82,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
     image: project?.image || "",
     liveUrl: project?.liveUrl || "",
     githubUrl: project?.githubUrl || "",
-    categorie: project?.categorie || "",
+    category: project?.category || "",
   });
 
   return (
@@ -140,10 +139,10 @@ const ProjectForm = ({ type, session, project }: Props) => {
       />
 
       <CustomMenu
-        title="categorie"
-        state={form.categorie}
+        title="category"
+        state={form.category}
         filters={categoryFilters}
-        setState={(value) => handleStateChange("categorie", value)}
+        setState={(value) => handleStateChange("category", value)}
       />
 
       <div className="flexStart w-full">

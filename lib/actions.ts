@@ -29,7 +29,7 @@ const client = new GraphQLClient(apiUrl);
 
 const makeGraphQLRequest = async (query: string, variables = {}) => {
   try {
-    return await client.request(query, variables);
+    // return await client.request(query, variables);
   } catch (error) {
     throw error;
   }
@@ -101,12 +101,12 @@ export const createNewProject = async (
 };
 
 export const fetchAllProjects = async (
-  categorie?: string,
+  category?: string,
   endCursor?: string
 ) => {
   client.setHeader("x-api-key", apiKey);
 
-  return makeGraphQLRequest(projectsQuery, { categorie, endCursor });
+  return makeGraphQLRequest(projectsQuery, { category, endCursor });
 };
 
 export const getProjectDetails = (id: string) => {

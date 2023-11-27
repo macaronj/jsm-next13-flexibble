@@ -9,7 +9,7 @@ type Props = {
 };
 
 const UserProfile = async ({ params }: Props) => {
-  const result = (await getUserProjects(params.id, 100)) as {
+  const result = (await getUserProjects(params.id, 100)) as unknown as {
     user: UserProfile;
   };
 

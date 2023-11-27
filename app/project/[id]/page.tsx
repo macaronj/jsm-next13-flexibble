@@ -11,7 +11,7 @@ import { ProjectInterface } from "@/common.types";
 
 const Project = async ({ params: { id } }: { params: { id: string } }) => {
   const session = await getCurrentUser();
-  const result = (await getProjectDetails(id)) as {
+  const result = (await getProjectDetails(id)) as unknown as {
     project?: ProjectInterface;
   };
 

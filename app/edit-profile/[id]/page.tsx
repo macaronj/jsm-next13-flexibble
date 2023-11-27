@@ -15,7 +15,7 @@ const EditUserProfile = async ({ params }: Props) => {
 
   if (!session?.user) redirect("/");
 
-  const result = (await getUserProjects(session?.user?.id)) as {
+  const result = (await getUserProjects(session?.user?.id)) as unknown as {
     user: UserProfile;
   };
 

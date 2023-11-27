@@ -10,7 +10,7 @@ type Props = {
 };
 
 const RelatedProjects = async ({ userId, projectId }: Props) => {
-  const result = (await getUserProjects(userId)) as {
+  const result = (await getUserProjects(userId)) as unknown as {
     user?: UserProfile;
   };
 

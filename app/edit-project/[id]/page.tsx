@@ -11,7 +11,7 @@ const EditProject = async ({ params: { id } }: { params: { id: string } }) => {
 
   if (!session?.user) redirect("/");
 
-  const result = (await getProjectDetails(id)) as {
+  const result = (await getProjectDetails(id)) as unknown as {
     project?: ProjectInterface;
   };
 
